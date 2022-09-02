@@ -1,0 +1,31 @@
+<!-- example.ejs -->
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Generator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      h1,
+      h3,
+      p {
+        margin: 10px 0 10px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <img style="width: 100%" src="<%= url %>/images.png" />
+    <h1>Dono do documento: <%= name %></h1>
+    <h3>Objetivo do documento:</h3>
+    <p style="font-size: 24px">Esse documento tem como objetivo gerar um PDF</p>
+    <% if (references) { %>
+    <h3>Referências:</h3>
+    <p><%= references.join(", ") + '.' %></p>
+    <% } %>
+  </body>
+</html>
